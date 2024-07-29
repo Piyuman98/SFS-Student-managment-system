@@ -1,0 +1,3028 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://localhost/Student-Management-System/index.php -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./index_files/logo.jpg" type="image/gif" sizes="16x16">
+    <title>Dashboard || SFS Student Management System</title>
+
+    	<link href="./index_files/css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="./index_files/bootstrap.css">
+	<link rel="stylesheet" href="./index_files/font-awesome.css">
+	<script src="./index_files/jquery-1.11.1.min.js.download" type="text/javascript"></script>
+
+	<!-- Datatable Style Sheet -->
+	<script language="JavaScript" src="./index_files/jquery.dataTables.min.js.download" type="text/javascript"></script>
+	<script language="JavaScript" src="./index_files/dataTables.bootstrap.js.download" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="./index_files/dataTables.bootstrap.css">
+
+	<script language="JavaScript" src="./index_files/custom.js.download" type="text/javascript"></script>
+	<script language="JavaScript" src="./index_files/site_script.js.download" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="./index_files/money_recept.css">
+	<link rel="stylesheet" type="text/css" href="./index_files/table.css">
+
+     
+    <script>
+        $(document).ready(function() {
+            $('#datatable').dataTable({
+                "sScrollX": "100%",
+                "sScrollY": "100%",
+                "sScrollXInner": "100%",
+            });
+
+            $("[data-toggle=tooltip]").tooltip();
+        } );
+    </script>
+
+
+    
+    <!-- End Datatable Style Sheet -->
+
+    <script src="./index_files/jquery.knob.js.download" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function() {
+            $(".knob").knob();
+        });
+        var bg_color="#2E363F";
+    </script>
+
+<script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script></head><body class="theme-blue"><div id="theme_color">
+    <style type="text/css">
+        :root {
+            --bg-color: #2E363F;
+            --font-color: #ffffff;
+        } 
+    </style>
+</div>
+    <link rel="stylesheet" type="text/css" href="./index_files/theme.css">
+
+
+
+
+
+
+
+    <!-- Demo page code -->
+
+
+    <style type="text/css">
+        #line-chart {
+            height:300px;
+            width:800px;
+            margin: 0px auto;
+            margin-top: 1em;
+        }
+        .navbar-default .navbar-brand, .navbar-default .navbar-brand:hover { 
+            color: #fff;
+        }
+        .watermark_body{
+            background: url(upload/custom_content/logo.jpg);
+            
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+            var uls = $('.sidebar-nav > ul > *').clone();
+            uls.addClass('visible-xs');
+            $('#main-menu').append(uls.clone());
+        });
+    </script>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="http://localhost/assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="http://localhost/assets/ico/apple-touch-icon-57-precomposed.png"><!--
+===============================
+  Navbar
+===============================
+-->
+
+
+
+<script type="text/javascript" src="./index_files/nav_bar_script.js.download"></script>
+ <div class="navbar navbar-default" role="navigation" style="position: auto; border-width: 0px 0px 1px 0px; border-color: rgba(0,0,0,0.2); padding: 10px;">
+
+        <div class="navbar-headerr" style="position: auto; border-width: 0px;">
+
+        <ul class="nav navbar-nav navbar-left">  
+          <span onclick="action_side_bar()" class="sidebar-toggle-action">
+          <button class="btn_nav_toggle"><i class="fa fa-bars" id="icon_div"></i></button>
+          </span> 
+        
+        
+          <a class="" href="http://localhost/Student-Management-System/index.php"><span class="navbar-brand" style="color:var(--font-color)"><font class="logo_title"> SFS Student Management System</font></span></a>
+          <span class="nev_bar_button_area">
+             <!-- here button -->
+           <button onclick="student_info_nav_bar()" class="btn_tab" style="margin-left: 15px;"><span class="glyphicon glyphicon-fire"></span> Student Quick Access</button>
+           <button onclick="sms_state_nav()" class="btn_tab" style="margin-left: 15px;"><span class="glyphicon glyphicon-envelope"></span> SMS Statistics</button>
+           <button onclick="live_chat_nav()" class="btn_tab" style="margin-left: 15px;"><i class="fa fa-comments"></i> Live Chat <b></b></button>
+           <button onclick="sql_editor()" class="btn_tab" style="margin-left: 15px;"><span class="fa fa-database"></span> SQL Editor</button>
+          
+
+
+          </span>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+                   
+        </ul> 
+
+         <!--  -->
+        </div>
+</div>
+
+  
+<style type="text/css">
+  @media screen and (max-width: 800px) {
+  .nev_bar_button_area {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  } 
+}
+
+
+
+
+</style>
+
+        
+<script type="text/javascript">
+  function action_side_bar(){
+    div=document.getElementById('content');
+    icon_div=document.getElementById('icon_div');
+    class_name=div.className;
+    if(class_name=='content_with_sidebar'){
+      div.className = 'content';
+      icon_div.className='fa fa-bars';
+    }
+    else{
+      div.className = 'content_with_sidebar';
+      icon_div.className='fa fa-times';
+    }
+  }
+</script>
+<script type="text/javascript" src="./index_files/nav_bar_script.js.download"></script>
+<link rel="stylesheet" type="text/css" href="./index_files/nav_bar.css">
+
+        
+  
+
+<div style="background-color: #ffffff; height: 100%; position: absolute;">
+    <div class="sidebar-nav" style="">
+        <style type="text/css">
+            .img_style {
+                height: 74px;
+                width: 70px;
+                margin: -5px;
+            }
+        </style>
+        
+            <ul class="side_bar_ul">
+
+                <li class="side-user" style="">
+
+                    <div class="user-head">
+                        <div>
+                            <a class="inbox-avatar" style="border-radius: 0%" href="http://localhost/Student-Management-System/user_info.php?user_id=%201">
+        <img class="img_style" width="74" hieght="70" src="./index_files/avatar.png">
+    </a>
+                            <div class="user-name" style="">
+                                <h5><a href="http://localhost/Student-Management-System/user_info.php?user_id=1">admin</a></h5>
+                                <span><a href="http://localhost/Student-Management-System/user_info.php?user_id=1">admin@gmail.com</a></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </li>
+
+                <li><a href="http://localhost/Student-Management-System/index.php" class="nav-header"><i class="fa fa-fw fa-dashboard side_bar_icon"></i> Dashboard</a></li>
+
+                <li><a href="javascript:void(0)" data-target=".legal-menu_s" class="nav-header collapsed" data-toggle="collapse"><i class="fa fa-mortar-board side_bar_icon"></i> Students<i class="fa fa-collapse"></i></a></li>
+
+                <li>
+                    <ul class="legal-menu_s nav nav-list collapse">
+                        <li class=""><a href="http://localhost/Student-Management-System/student_list.php" class=""><span class="fa fa-caret-right"></span>Student List</a></li>
+                        <li><a href="http://localhost/Student-Management-System/add_student.php"><span class="fa fa-caret-right"></span>Add Student</a></li>
+                        <li><a href="http://localhost/Student-Management-System/attend.php"><span class="fa fa-caret-right"></span>Attendence</a></li>
+                    </ul>
+                </li>
+
+                
+                    <li><a href="http://localhost/Student-Management-System/batch_list.php" class="nav-header"><i class="fa fa-outdent  side_bar_icon"></i> Batch</a></li>
+
+                    <li><a href="http://localhost/Student-Management-System/program_list.php" class="nav-header"><i class="fa fa-renren side_bar_icon"></i> Program</a></li>
+
+                    <li><a href="http://localhost/Student-Management-System/subject_list.php" class="nav-header"><i class="fa fa-fw fa-book side_bar_icon"></i> Subject</a></li>
+
+                    <li><a href="javascript:void(0)" data-target=".result" class="nav-header collapsed" data-toggle="collapse"><i class="fa fa-th-list side_bar_icon"></i> Exam<i class="fa fa-collapse"></i></a></li>
+
+                    <li>
+                        <ul class="result nav nav-list collapse">
+                            <li><a href="http://localhost/Student-Management-System/exam_list.php" class="l_active"><span class="fa fa-caret-right"></span>Exam List</a></li>
+                            <li><a href="http://localhost/Student-Management-System/result.php" class="l_active"><span class="fa fa-caret-right"></span>Show Result</a></li>
+                            <li><a href="http://localhost/Student-Management-System/add_result.php" class="l_active"><span class="fa fa-caret-right"></span>ADD Result</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li><a href="javascript:void(0)" data-target=".notice" class="nav-header collapsed" data-toggle="collapse"><i class="fa fa-bullhorn side_bar_icon"></i> Notice<i class="fa fa-collapse"></i></a></li>
+
+                    <li>
+                        <ul class="notice nav nav-list collapse">
+
+                            <li><a href="http://localhost/Student-Management-System/notice_list.php"><span class="fa fa-caret-right"></span>Notice List</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="javascript:void(0)" data-target=".user" class="nav-header collapsed" data-toggle="collapse"><i class="fa fa-fw fa-user side_bar_icon"></i> User<i class="fa fa-collapse"></i></a></li>
+
+                    <li>
+                        <ul class="user nav nav-list collapse">
+                            <li><a href="http://localhost/Student-Management-System/user_list.php" class="l_active"><span class="fa fa-caret-right"></span> User List</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li><a href="javascript:void(0)" data-target=".account" class="nav-header collapsed" data-toggle="collapse"><i class="fa fa-rupee side_bar_icon"></i> Account<i class="fa fa-collapse"></i></a></li>
+
+                    <li>
+                        <ul class="account nav nav-list collapse">
+                            <li><a href="http://localhost/Student-Management-System/account.php?type=expence" class="l_active"><span class="fa fa-caret-right"></span>Add Expence</a></li>
+                            <li><a href="http://localhost/Student-Management-System/account.php?type=income" class="l_active"><span class="fa fa-caret-right"></span>Add Income</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li><a href="javascript:void(0)" data-target=".report" class="nav-header collapsed" data-toggle="collapse"><i class="fa fa-file-text-o side_bar_icon"></i> Report<i class="fa fa-collapse"></i></a></li>
+
+                    <li>
+                        <ul class="report nav nav-list collapse">
+                            <li><a href="http://localhost/Student-Management-System/report.php?type=payment_report" class="l_active"><span class="fa fa-caret-right"></span>Payment Report</a></li>
+                            <li><a href="http://localhost/Student-Management-System/report.php?type=expence_report"><span class="fa fa-caret-right"></span>Expence Report</a></li>
+                            <li><a href="http://localhost/Student-Management-System/report.php?type=income_report"><span class="fa fa-caret-right"></span>Income Report</a></li>
+                            <li><a href="http://localhost/Student-Management-System/report.php?type=profit_report"><span class="fa fa-caret-right"></span>Profit Report</a></li>
+                            <li><a href="http://localhost/Student-Management-System/report.php?type=attendence_report"><span class="fa fa-caret-right"></span>Attendence Report</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li><a href="javascript:void(0)" data-target=".sms" class="nav-header collapsed" data-toggle="collapse"><i class="fa fa-envelope-o side_bar_icon"></i> SMS<i class="fa fa-collapse"></i></a></li>
+
+                    <li>
+                        <ul class="sms nav nav-list collapse">
+                            <li><a href="http://localhost/Student-Management-System/sms_dashboard.php" class="l_active"><span class="fa fa-caret-right"></span>SMS Dashboard</a></li>
+                            <li><a href="http://localhost/Student-Management-System/pending_sms_list.php" class="l_active"><span class="fa fa-caret-right"></span>Pending SMS (0)</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li><a href="javascript:void(0)" data-target=".setting" class="nav-header collapsed" data-toggle="collapse"><i class="fa fa-cogs side_bar_icon"></i> Setting<i class="fa fa-collapse"></i></a></li>
+
+                    <li>
+                        <ul class="setting nav nav-list collapse">
+                            <li><a href="http://localhost/Student-Management-System/setting.php" class="l_active"><span class="fa fa-caret-right"></span>Genaral Setting</a></li>
+
+                        </ul>
+                    </li>
+
+                                </ul>
+    </div>
+
+</div>
+
+<style type="text/css">
+   
+    .side_bar_ul a{
+        text-decoration: none;
+    }
+    .side_bar_icon {
+        background-color: rgba(0,0,0,0.1);
+        margin-right: 10px;
+        font-size: 15px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px!important;
+        text-align: center!important;
+        border-radius: 5px;
+        padding-left: 9px;
+        
+    }
+    .side_bar_ul{
+        color: var(--font-color);
+        opacity: 0.9;
+    }
+    
+    
+    
+</style>
+<div id="content" class="content"> 
+	<div class="main-content" style="padding-bottom: 30px;margin-top: 15px;">
+		
+<script type="text/javascript" src="./index_files/bubble.js.download"></script>
+
+<style type="text/css">
+	.theme_select .modal-dialog{max-width: 800px; width: 100%;}
+</style>
+
+<div class="containerr" style="">
+	<div class="row" style="">
+		        <div id="inbox">
+          <div style="position: fixed;" class="fab btn-group show-on-hover dropup">
+          <div data-toggle="tooltip" data-placement="left" title="" style="margin-left: 42px;" data-original-title="Select Option">
+          <button type="button" class="btn btn-danger btn-io dropdown-toggle" data-toggle="dropdown" style="">
+            <span class="fa-stack fa-2x">
+                <i class="fa fa-circle fa-stack-2x fab-backdrop"></i>
+                <i class="fa fa-plus fa-stack-1x fa-inverse fab-primary"></i>
+                <i class="fa fa-pencil fa-stack-1x fa-inverse fab-secondary"></i>
+            </span>
+          </button></div>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+            <li class="dropdown_sub" style=""><a onclick="get_theme_list()" style=""><i class="fa fa-tint"></i></a> </li>
+
+          </ul>
+        </div>
+        </div>
+	</div>
+</div>
+
+
+<div class="modal large fade theme_select" id="theme" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        
+        <div class="modal-body" style="background-color: #ecf0f1">
+        	<div class="row" style="">
+	
+<style type="text/css">
+	
+	.header_theme{
+      
+      height: 150px;
+      padding-top: 60px;
+
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 100%;
+	}
+	.img_src{
+		width: 60px;
+		height: 60px;
+	}
+	.active{
+		
+	}
+	.edit{
+      
+        background-color: #2980b9;
+	}
+	.delete{
+        
+        background-color: #e74c3c;
+	}
+	.edit,.delete,.active{
+		padding: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #ffffff;
+	}
+	
+
+</style>
+
+<div id="response_theme"></div>
+<script type="text/javascript">
+	function themes_select(uid,theme_id){
+
+		$.ajax({
+          type: 'POST',
+          url: 'theme_action.php',
+          data: {
+              update: uid,
+              theme: theme_id
+          },
+          beforeSend: function() {
+              //loader("loading");
+          },
+          success: function(response) {
+             //location.reload();
+             set_html("response_theme",response);
+   
+          }
+      });
+	}
+</script>
+
+
+<input type="text" name="" id="color_id" hidden="">
+	<div class="col-md-3 col-sm-3" style="margin-top: 15px; margin-right: 0px;">
+		<div class="theme">
+			<div class="header_theme" style="background-color: #2E363F; color: #ffffff" onclick="themes_select(1,1)">
+			<center>	
+			
+			           	<span style="font-size: 40px" class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
+           		</center>	
+		
+			</div>
+		
+		
+		</div>
+	</div>
+
+
+
+<style type="text/css">
+	
+	.header_theme{
+      
+      height: 150px;
+      padding-top: 60px;
+
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 100%;
+	}
+	.img_src{
+		width: 60px;
+		height: 60px;
+	}
+	.active{
+		
+	}
+	.edit{
+      
+        background-color: #2980b9;
+	}
+	.delete{
+        
+        background-color: #e74c3c;
+	}
+	.edit,.delete,.active{
+		padding: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #ffffff;
+	}
+	
+
+</style>
+
+<div id="response_theme"></div>
+<script type="text/javascript">
+	function themes_select(uid,theme_id){
+
+		$.ajax({
+          type: 'POST',
+          url: 'theme_action.php',
+          data: {
+              update: uid,
+              theme: theme_id
+          },
+          beforeSend: function() {
+              //loader("loading");
+          },
+          success: function(response) {
+             //location.reload();
+             set_html("response_theme",response);
+   
+          }
+      });
+	}
+</script>
+
+
+<input type="text" name="" id="color_id" hidden="">
+	<div class="col-md-3 col-sm-3" style="margin-top: 15px; margin-right: 0px;">
+		<div class="theme">
+			<div class="header_theme" style="background-color: #CF0A2F; color: #ffffff" onclick="themes_select(1,2)">
+			<center>	
+			
+					</center>	
+		
+			</div>
+		
+		
+		</div>
+	</div>
+
+
+
+<style type="text/css">
+	
+	.header_theme{
+      
+      height: 150px;
+      padding-top: 60px;
+
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 100%;
+	}
+	.img_src{
+		width: 60px;
+		height: 60px;
+	}
+	.active{
+		
+	}
+	.edit{
+      
+        background-color: #2980b9;
+	}
+	.delete{
+        
+        background-color: #e74c3c;
+	}
+	.edit,.delete,.active{
+		padding: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #ffffff;
+	}
+	
+
+</style>
+
+<div id="response_theme"></div>
+<script type="text/javascript">
+	function themes_select(uid,theme_id){
+
+		$.ajax({
+          type: 'POST',
+          url: 'theme_action.php',
+          data: {
+              update: uid,
+              theme: theme_id
+          },
+          beforeSend: function() {
+              //loader("loading");
+          },
+          success: function(response) {
+             //location.reload();
+             set_html("response_theme",response);
+   
+          }
+      });
+	}
+</script>
+
+
+<input type="text" name="" id="color_id" hidden="">
+	<div class="col-md-3 col-sm-3" style="margin-top: 15px; margin-right: 0px;">
+		<div class="theme">
+			<div class="header_theme" style="background-color: #AB2567; color: #ffffff" onclick="themes_select(1,3)">
+			<center>	
+			
+					</center>	
+		
+			</div>
+		
+		
+		</div>
+	</div>
+
+
+
+<style type="text/css">
+	
+	.header_theme{
+      
+      height: 150px;
+      padding-top: 60px;
+
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 100%;
+	}
+	.img_src{
+		width: 60px;
+		height: 60px;
+	}
+	.active{
+		
+	}
+	.edit{
+      
+        background-color: #2980b9;
+	}
+	.delete{
+        
+        background-color: #e74c3c;
+	}
+	.edit,.delete,.active{
+		padding: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #ffffff;
+	}
+	
+
+</style>
+
+<div id="response_theme"></div>
+<script type="text/javascript">
+	function themes_select(uid,theme_id){
+
+		$.ajax({
+          type: 'POST',
+          url: 'theme_action.php',
+          data: {
+              update: uid,
+              theme: theme_id
+          },
+          beforeSend: function() {
+              //loader("loading");
+          },
+          success: function(response) {
+             //location.reload();
+             set_html("response_theme",response);
+   
+          }
+      });
+	}
+</script>
+
+
+<input type="text" name="" id="color_id" hidden="">
+	<div class="col-md-3 col-sm-3" style="margin-top: 15px; margin-right: 0px;">
+		<div class="theme">
+			<div class="header_theme" style="background-color: #088730; color: #FFFFFF" onclick="themes_select(1,4)">
+			<center>	
+			
+					</center>	
+		
+			</div>
+		
+		
+		</div>
+	</div>
+
+
+
+<style type="text/css">
+	
+	.header_theme{
+      
+      height: 150px;
+      padding-top: 60px;
+
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 100%;
+	}
+	.img_src{
+		width: 60px;
+		height: 60px;
+	}
+	.active{
+		
+	}
+	.edit{
+      
+        background-color: #2980b9;
+	}
+	.delete{
+        
+        background-color: #e74c3c;
+	}
+	.edit,.delete,.active{
+		padding: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #ffffff;
+	}
+	
+
+</style>
+
+<div id="response_theme"></div>
+<script type="text/javascript">
+	function themes_select(uid,theme_id){
+
+		$.ajax({
+          type: 'POST',
+          url: 'theme_action.php',
+          data: {
+              update: uid,
+              theme: theme_id
+          },
+          beforeSend: function() {
+              //loader("loading");
+          },
+          success: function(response) {
+             //location.reload();
+             set_html("response_theme",response);
+   
+          }
+      });
+	}
+</script>
+
+
+<input type="text" name="" id="color_id" hidden="">
+	<div class="col-md-3 col-sm-3" style="margin-top: 15px; margin-right: 0px;">
+		<div class="theme">
+			<div class="header_theme" style="background-color: #AB9803; color: #000000" onclick="themes_select(1,5)">
+			<center>	
+			
+					</center>	
+		
+			</div>
+		
+		
+		</div>
+	</div>
+
+
+
+<style type="text/css">
+	
+	.header_theme{
+      
+      height: 150px;
+      padding-top: 60px;
+
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 100%;
+	}
+	.img_src{
+		width: 60px;
+		height: 60px;
+	}
+	.active{
+		
+	}
+	.edit{
+      
+        background-color: #2980b9;
+	}
+	.delete{
+        
+        background-color: #e74c3c;
+	}
+	.edit,.delete,.active{
+		padding: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #ffffff;
+	}
+	
+
+</style>
+
+<div id="response_theme"></div>
+<script type="text/javascript">
+	function themes_select(uid,theme_id){
+
+		$.ajax({
+          type: 'POST',
+          url: 'theme_action.php',
+          data: {
+              update: uid,
+              theme: theme_id
+          },
+          beforeSend: function() {
+              //loader("loading");
+          },
+          success: function(response) {
+             //location.reload();
+             set_html("response_theme",response);
+   
+          }
+      });
+	}
+</script>
+
+
+<input type="text" name="" id="color_id" hidden="">
+	<div class="col-md-3 col-sm-3" style="margin-top: 15px; margin-right: 0px;">
+		<div class="theme">
+			<div class="header_theme" style="background-color: #0F0000; color: #FFFFFF" onclick="themes_select(1,6)">
+			<center>	
+			
+					</center>	
+		
+			</div>
+		
+		
+		</div>
+	</div>
+
+
+
+<style type="text/css">
+	
+	.header_theme{
+      
+      height: 150px;
+      padding-top: 60px;
+
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 100%;
+	}
+	.img_src{
+		width: 60px;
+		height: 60px;
+	}
+	.active{
+		
+	}
+	.edit{
+      
+        background-color: #2980b9;
+	}
+	.delete{
+        
+        background-color: #e74c3c;
+	}
+	.edit,.delete,.active{
+		padding: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #ffffff;
+	}
+	
+
+</style>
+
+<div id="response_theme"></div>
+<script type="text/javascript">
+	function themes_select(uid,theme_id){
+
+		$.ajax({
+          type: 'POST',
+          url: 'theme_action.php',
+          data: {
+              update: uid,
+              theme: theme_id
+          },
+          beforeSend: function() {
+              //loader("loading");
+          },
+          success: function(response) {
+             //location.reload();
+             set_html("response_theme",response);
+   
+          }
+      });
+	}
+</script>
+
+
+<input type="text" name="" id="color_id" hidden="">
+	<div class="col-md-3 col-sm-3" style="margin-top: 15px; margin-right: 0px;">
+		<div class="theme">
+			<div class="header_theme" style="background-color: #E74C3C; color: #FFFFFF" onclick="themes_select(1,7)">
+			<center>	
+			
+					</center>	
+		
+			</div>
+		
+		
+		</div>
+	</div>
+
+
+
+<style type="text/css">
+	
+	.header_theme{
+      
+      height: 150px;
+      padding-top: 60px;
+
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 100%;
+	}
+	.img_src{
+		width: 60px;
+		height: 60px;
+	}
+	.active{
+		
+	}
+	.edit{
+      
+        background-color: #2980b9;
+	}
+	.delete{
+        
+        background-color: #e74c3c;
+	}
+	.edit,.delete,.active{
+		padding: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #ffffff;
+	}
+	
+
+</style>
+
+<div id="response_theme"></div>
+<script type="text/javascript">
+	function themes_select(uid,theme_id){
+
+		$.ajax({
+          type: 'POST',
+          url: 'theme_action.php',
+          data: {
+              update: uid,
+              theme: theme_id
+          },
+          beforeSend: function() {
+              //loader("loading");
+          },
+          success: function(response) {
+             //location.reload();
+             set_html("response_theme",response);
+   
+          }
+      });
+	}
+</script>
+
+
+<input type="text" name="" id="color_id" hidden="">
+	<div class="col-md-3 col-sm-3" style="margin-top: 15px; margin-right: 0px;">
+		<div class="theme">
+			<div class="header_theme" style="background-color: #ED5FE9; color: #FFFFFF" onclick="themes_select(1,9)">
+			<center>	
+			
+					</center>	
+		
+			</div>
+		
+		
+		</div>
+	</div>
+
+
+
+<style type="text/css">
+	
+	.header_theme{
+      
+      height: 150px;
+      padding-top: 60px;
+
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 100%;
+	}
+	.img_src{
+		width: 60px;
+		height: 60px;
+	}
+	.active{
+		
+	}
+	.edit{
+      
+        background-color: #2980b9;
+	}
+	.delete{
+        
+        background-color: #e74c3c;
+	}
+	.edit,.delete,.active{
+		padding: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #ffffff;
+	}
+	
+
+</style>
+
+<div id="response_theme"></div>
+<script type="text/javascript">
+	function themes_select(uid,theme_id){
+
+		$.ajax({
+          type: 'POST',
+          url: 'theme_action.php',
+          data: {
+              update: uid,
+              theme: theme_id
+          },
+          beforeSend: function() {
+              //loader("loading");
+          },
+          success: function(response) {
+             //location.reload();
+             set_html("response_theme",response);
+   
+          }
+      });
+	}
+</script>
+
+
+<input type="text" name="" id="color_id" hidden="">
+	<div class="col-md-3 col-sm-3" style="margin-top: 15px; margin-right: 0px;">
+		<div class="theme">
+			<div class="header_theme" style="background-color: #564C9E; color: #FFFFFF" onclick="themes_select(1,10)">
+			<center>	
+			
+					</center>	
+		
+			</div>
+		
+		
+		</div>
+	</div>
+
+
+
+<style type="text/css">
+	
+	.header_theme{
+      
+      height: 150px;
+      padding-top: 60px;
+
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 100%;
+	}
+	.img_src{
+		width: 60px;
+		height: 60px;
+	}
+	.active{
+		
+	}
+	.edit{
+      
+        background-color: #2980b9;
+	}
+	.delete{
+        
+        background-color: #e74c3c;
+	}
+	.edit,.delete,.active{
+		padding: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #ffffff;
+	}
+	
+
+</style>
+
+<div id="response_theme"></div>
+<script type="text/javascript">
+	function themes_select(uid,theme_id){
+
+		$.ajax({
+          type: 'POST',
+          url: 'theme_action.php',
+          data: {
+              update: uid,
+              theme: theme_id
+          },
+          beforeSend: function() {
+              //loader("loading");
+          },
+          success: function(response) {
+             //location.reload();
+             set_html("response_theme",response);
+   
+          }
+      });
+	}
+</script>
+
+
+<input type="text" name="" id="color_id" hidden="">
+	<div class="col-md-3 col-sm-3" style="margin-top: 15px; margin-right: 0px;">
+		<div class="theme">
+			<div class="header_theme" style="background-color: #005154; color: #FFFFFF" onclick="themes_select(1,23)">
+			<center>	
+			
+					</center>	
+		
+			</div>
+		
+		
+		</div>
+	</div>
+
+
+
+<style type="text/css">
+	
+	.header_theme{
+      
+      height: 150px;
+      padding-top: 60px;
+
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 100%;
+	}
+	.img_src{
+		width: 60px;
+		height: 60px;
+	}
+	.active{
+		
+	}
+	.edit{
+      
+        background-color: #2980b9;
+	}
+	.delete{
+        
+        background-color: #e74c3c;
+	}
+	.edit,.delete,.active{
+		padding: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #ffffff;
+	}
+	
+
+</style>
+
+<div id="response_theme"></div>
+<script type="text/javascript">
+	function themes_select(uid,theme_id){
+
+		$.ajax({
+          type: 'POST',
+          url: 'theme_action.php',
+          data: {
+              update: uid,
+              theme: theme_id
+          },
+          beforeSend: function() {
+              //loader("loading");
+          },
+          success: function(response) {
+             //location.reload();
+             set_html("response_theme",response);
+   
+          }
+      });
+	}
+</script>
+
+
+<input type="text" name="" id="color_id" hidden="">
+	<div class="col-md-3 col-sm-3" style="margin-top: 15px; margin-right: 0px;">
+		<div class="theme">
+			<div class="header_theme" style="background-color: #235A6B; color: #FFFFFF" onclick="themes_select(1,22)">
+			<center>	
+			
+					</center>	
+		
+			</div>
+		
+		
+		</div>
+	</div>
+
+
+
+<style type="text/css">
+	
+	.header_theme{
+      
+      height: 150px;
+      padding-top: 60px;
+
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 100%;
+	}
+	.img_src{
+		width: 60px;
+		height: 60px;
+	}
+	.active{
+		
+	}
+	.edit{
+      
+        background-color: #2980b9;
+	}
+	.delete{
+        
+        background-color: #e74c3c;
+	}
+	.edit,.delete,.active{
+		padding: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #ffffff;
+	}
+	
+
+</style>
+
+<div id="response_theme"></div>
+<script type="text/javascript">
+	function themes_select(uid,theme_id){
+
+		$.ajax({
+          type: 'POST',
+          url: 'theme_action.php',
+          data: {
+              update: uid,
+              theme: theme_id
+          },
+          beforeSend: function() {
+              //loader("loading");
+          },
+          success: function(response) {
+             //location.reload();
+             set_html("response_theme",response);
+   
+          }
+      });
+	}
+</script>
+
+
+<input type="text" name="" id="color_id" hidden="">
+	<div class="col-md-3 col-sm-3" style="margin-top: 15px; margin-right: 0px;">
+		<div class="theme">
+			<div class="header_theme" style="background-color: #378BA6; color: #FFFFFF" onclick="themes_select(1,21)">
+			<center>	
+			
+					</center>	
+		
+			</div>
+		
+		
+		</div>
+	</div>
+
+
+
+<style type="text/css">
+	
+	.header_theme{
+      
+      height: 150px;
+      padding-top: 60px;
+
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 100%;
+	}
+	.img_src{
+		width: 60px;
+		height: 60px;
+	}
+	.active{
+		
+	}
+	.edit{
+      
+        background-color: #2980b9;
+	}
+	.delete{
+        
+        background-color: #e74c3c;
+	}
+	.edit,.delete,.active{
+		padding: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #ffffff;
+	}
+	
+
+</style>
+
+<div id="response_theme"></div>
+<script type="text/javascript">
+	function themes_select(uid,theme_id){
+
+		$.ajax({
+          type: 'POST',
+          url: 'theme_action.php',
+          data: {
+              update: uid,
+              theme: theme_id
+          },
+          beforeSend: function() {
+              //loader("loading");
+          },
+          success: function(response) {
+             //location.reload();
+             set_html("response_theme",response);
+   
+          }
+      });
+	}
+</script>
+
+
+<input type="text" name="" id="color_id" hidden="">
+	<div class="col-md-3 col-sm-3" style="margin-top: 15px; margin-right: 0px;">
+		<div class="theme">
+			<div class="header_theme" style="background-color: #C44569; color: #FFFFFF" onclick="themes_select(1,14)">
+			<center>	
+			
+					</center>	
+		
+			</div>
+		
+		
+		</div>
+	</div>
+
+
+
+<style type="text/css">
+	
+	.header_theme{
+      
+      height: 150px;
+      padding-top: 60px;
+
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 100%;
+	}
+	.img_src{
+		width: 60px;
+		height: 60px;
+	}
+	.active{
+		
+	}
+	.edit{
+      
+        background-color: #2980b9;
+	}
+	.delete{
+        
+        background-color: #e74c3c;
+	}
+	.edit,.delete,.active{
+		padding: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #ffffff;
+	}
+	
+
+</style>
+
+<div id="response_theme"></div>
+<script type="text/javascript">
+	function themes_select(uid,theme_id){
+
+		$.ajax({
+          type: 'POST',
+          url: 'theme_action.php',
+          data: {
+              update: uid,
+              theme: theme_id
+          },
+          beforeSend: function() {
+              //loader("loading");
+          },
+          success: function(response) {
+             //location.reload();
+             set_html("response_theme",response);
+   
+          }
+      });
+	}
+</script>
+
+
+<input type="text" name="" id="color_id" hidden="">
+	<div class="col-md-3 col-sm-3" style="margin-top: 15px; margin-right: 0px;">
+		<div class="theme">
+			<div class="header_theme" style="background-color: #574B90; color: #FFFFFF" onclick="themes_select(1,15)">
+			<center>	
+			
+					</center>	
+		
+			</div>
+		
+		
+		</div>
+	</div>
+
+
+
+<style type="text/css">
+	
+	.header_theme{
+      
+      height: 150px;
+      padding-top: 60px;
+
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 100%;
+	}
+	.img_src{
+		width: 60px;
+		height: 60px;
+	}
+	.active{
+		
+	}
+	.edit{
+      
+        background-color: #2980b9;
+	}
+	.delete{
+        
+        background-color: #e74c3c;
+	}
+	.edit,.delete,.active{
+		padding: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #ffffff;
+	}
+	
+
+</style>
+
+<div id="response_theme"></div>
+<script type="text/javascript">
+	function themes_select(uid,theme_id){
+
+		$.ajax({
+          type: 'POST',
+          url: 'theme_action.php',
+          data: {
+              update: uid,
+              theme: theme_id
+          },
+          beforeSend: function() {
+              //loader("loading");
+          },
+          success: function(response) {
+             //location.reload();
+             set_html("response_theme",response);
+   
+          }
+      });
+	}
+</script>
+
+
+<input type="text" name="" id="color_id" hidden="">
+	<div class="col-md-3 col-sm-3" style="margin-top: 15px; margin-right: 0px;">
+		<div class="theme">
+			<div class="header_theme" style="background-color: #A32929; color: #EDE6EC" onclick="themes_select(1,17)">
+			<center>	
+			
+					</center>	
+		
+			</div>
+		
+		
+		</div>
+	</div>
+
+
+
+<style type="text/css">
+	
+	.header_theme{
+      
+      height: 150px;
+      padding-top: 60px;
+
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 100%;
+	}
+	.img_src{
+		width: 60px;
+		height: 60px;
+	}
+	.active{
+		
+	}
+	.edit{
+      
+        background-color: #2980b9;
+	}
+	.delete{
+        
+        background-color: #e74c3c;
+	}
+	.edit,.delete,.active{
+		padding: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #ffffff;
+	}
+	
+
+</style>
+
+<div id="response_theme"></div>
+<script type="text/javascript">
+	function themes_select(uid,theme_id){
+
+		$.ajax({
+          type: 'POST',
+          url: 'theme_action.php',
+          data: {
+              update: uid,
+              theme: theme_id
+          },
+          beforeSend: function() {
+              //loader("loading");
+          },
+          success: function(response) {
+             //location.reload();
+             set_html("response_theme",response);
+   
+          }
+      });
+	}
+</script>
+
+
+<input type="text" name="" id="color_id" hidden="">
+	<div class="col-md-3 col-sm-3" style="margin-top: 15px; margin-right: 0px;">
+		<div class="theme">
+			<div class="header_theme" style="background-color: #673AB7; color: #FFFFFF" onclick="themes_select(1,19)">
+			<center>	
+			
+					</center>	
+		
+			</div>
+		
+		
+		</div>
+	</div>
+
+
+
+<style type="text/css">
+	
+	.header_theme{
+      
+      height: 150px;
+      padding-top: 60px;
+
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 100%;
+	}
+	.img_src{
+		width: 60px;
+		height: 60px;
+	}
+	.active{
+		
+	}
+	.edit{
+      
+        background-color: #2980b9;
+	}
+	.delete{
+        
+        background-color: #e74c3c;
+	}
+	.edit,.delete,.active{
+		padding: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #ffffff;
+	}
+	
+
+</style>
+
+<div id="response_theme"></div>
+<script type="text/javascript">
+	function themes_select(uid,theme_id){
+
+		$.ajax({
+          type: 'POST',
+          url: 'theme_action.php',
+          data: {
+              update: uid,
+              theme: theme_id
+          },
+          beforeSend: function() {
+              //loader("loading");
+          },
+          success: function(response) {
+             //location.reload();
+             set_html("response_theme",response);
+   
+          }
+      });
+	}
+</script>
+
+
+<input type="text" name="" id="color_id" hidden="">
+	<div class="col-md-3 col-sm-3" style="margin-top: 15px; margin-right: 0px;">
+		<div class="theme">
+			<div class="header_theme" style="background-color: #DB4437; color: #FFFFFF" onclick="themes_select(1,20)">
+			<center>	
+			
+					</center>	
+		
+			</div>
+		
+		
+		</div>
+	</div>
+
+
+
+<style type="text/css">
+	
+	.header_theme{
+      
+      height: 150px;
+      padding-top: 60px;
+
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 100%;
+	}
+	.img_src{
+		width: 60px;
+		height: 60px;
+	}
+	.active{
+		
+	}
+	.edit{
+      
+        background-color: #2980b9;
+	}
+	.delete{
+        
+        background-color: #e74c3c;
+	}
+	.edit,.delete,.active{
+		padding: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #ffffff;
+	}
+	
+
+</style>
+
+<div id="response_theme"></div>
+<script type="text/javascript">
+	function themes_select(uid,theme_id){
+
+		$.ajax({
+          type: 'POST',
+          url: 'theme_action.php',
+          data: {
+              update: uid,
+              theme: theme_id
+          },
+          beforeSend: function() {
+              //loader("loading");
+          },
+          success: function(response) {
+             //location.reload();
+             set_html("response_theme",response);
+   
+          }
+      });
+	}
+</script>
+
+
+<input type="text" name="" id="color_id" hidden="">
+	<div class="col-md-3 col-sm-3" style="margin-top: 15px; margin-right: 0px;">
+		<div class="theme">
+			<div class="header_theme" style="background-color: #331F77; color: #FFFFFF" onclick="themes_select(1,24)">
+			<center>	
+			
+					</center>	
+		
+			</div>
+		
+		
+		</div>
+	</div>
+
+
+
+<style type="text/css">
+	
+	.header_theme{
+      
+      height: 150px;
+      padding-top: 60px;
+
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 100%;
+	}
+	.img_src{
+		width: 60px;
+		height: 60px;
+	}
+	.active{
+		
+	}
+	.edit{
+      
+        background-color: #2980b9;
+	}
+	.delete{
+        
+        background-color: #e74c3c;
+	}
+	.edit,.delete,.active{
+		padding: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #ffffff;
+	}
+	
+
+</style>
+
+<div id="response_theme"></div>
+<script type="text/javascript">
+	function themes_select(uid,theme_id){
+
+		$.ajax({
+          type: 'POST',
+          url: 'theme_action.php',
+          data: {
+              update: uid,
+              theme: theme_id
+          },
+          beforeSend: function() {
+              //loader("loading");
+          },
+          success: function(response) {
+             //location.reload();
+             set_html("response_theme",response);
+   
+          }
+      });
+	}
+</script>
+
+
+<input type="text" name="" id="color_id" hidden="">
+	<div class="col-md-3 col-sm-3" style="margin-top: 15px; margin-right: 0px;">
+		<div class="theme">
+			<div class="header_theme" style="background-color: #ED3B19; color: #FFFFFF" onclick="themes_select(1,25)">
+			<center>	
+			
+					</center>	
+		
+			</div>
+		
+		
+		</div>
+	</div>
+
+
+
+<style type="text/css">
+	
+	.header_theme{
+      
+      height: 150px;
+      padding-top: 60px;
+
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 100%;
+	}
+	.img_src{
+		width: 60px;
+		height: 60px;
+	}
+	.active{
+		
+	}
+	.edit{
+      
+        background-color: #2980b9;
+	}
+	.delete{
+        
+        background-color: #e74c3c;
+	}
+	.edit,.delete,.active{
+		padding: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #ffffff;
+	}
+	
+
+</style>
+
+<div id="response_theme"></div>
+<script type="text/javascript">
+	function themes_select(uid,theme_id){
+
+		$.ajax({
+          type: 'POST',
+          url: 'theme_action.php',
+          data: {
+              update: uid,
+              theme: theme_id
+          },
+          beforeSend: function() {
+              //loader("loading");
+          },
+          success: function(response) {
+             //location.reload();
+             set_html("response_theme",response);
+   
+          }
+      });
+	}
+</script>
+
+
+<input type="text" name="" id="color_id" hidden="">
+	<div class="col-md-3 col-sm-3" style="margin-top: 15px; margin-right: 0px;">
+		<div class="theme">
+			<div class="header_theme" style="background-color: #001E4C; color: #FFFFFF" onclick="themes_select(1,26)">
+			<center>	
+			
+					</center>	
+		
+			</div>
+		
+		
+		</div>
+	</div>
+
+
+
+<style type="text/css">
+	
+	.header_theme{
+      
+      height: 150px;
+      padding-top: 60px;
+
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 100%;
+	}
+	.img_src{
+		width: 60px;
+		height: 60px;
+	}
+	.active{
+		
+	}
+	.edit{
+      
+        background-color: #2980b9;
+	}
+	.delete{
+        
+        background-color: #e74c3c;
+	}
+	.edit,.delete,.active{
+		padding: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #ffffff;
+	}
+	
+
+</style>
+
+<div id="response_theme"></div>
+<script type="text/javascript">
+	function themes_select(uid,theme_id){
+
+		$.ajax({
+          type: 'POST',
+          url: 'theme_action.php',
+          data: {
+              update: uid,
+              theme: theme_id
+          },
+          beforeSend: function() {
+              //loader("loading");
+          },
+          success: function(response) {
+             //location.reload();
+             set_html("response_theme",response);
+   
+          }
+      });
+	}
+</script>
+
+
+<input type="text" name="" id="color_id" hidden="">
+	<div class="col-md-3 col-sm-3" style="margin-top: 15px; margin-right: 0px;">
+		<div class="theme">
+			<div class="header_theme" style="background-color: #2C293E; color: #EDEDED" onclick="themes_select(1,27)">
+			<center>	
+			
+					</center>	
+		
+			</div>
+		
+		
+		</div>
+	</div>
+
+
+
+
+</div>
+
+
+
+
+ 
+        </div>
+      </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+	$('.fab').hover(function () {
+    $(this).toggleClass('active');
+});
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+<style type="text/css">
+
+
+
+.fab {
+  cursor: pointer;
+}
+.fab-backdrop {
+  color: rgba(255, 255, 255, 0);
+}
+.fab-primary, .fab-secondary {
+  transition: all 0.35s ease-in-out;
+}
+.fab.active .fab-primary {
+  opacity: 0;
+  transform: rotate(225deg);
+}
+.fab-secondary {
+  opacity: 0;
+  transform: rotate(-225deg);
+}
+.fab.active .fab-secondary {
+  opacity: 1;
+  transform: rotate(0);
+  margin-top: -2px;
+}
+
+
+
+#inbox .show-on-hover:hover > ul.dropdown-menu {
+    display: block;    
+}
+#inbox .show-on-hover {
+    position: absolute;
+    bottom: 40px;
+    right: 20px;
+}
+#inbox .btn-io{
+    height: 65px;
+    width: 65px;
+    padding: 0 !important;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 100%;
+}
+#inbox .dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu {
+top: auto;
+bottom: 100%;
+margin-bottom: 1px;
+margin-bottom: -5px;
+padding-bottom: 30px;
+}
+#inbox .dropdown-menu-right {
+right: 0 !Important;
+left: auto !Important;
+}
+#inbox .dropdown-menu {
+position: absolute;
+top: 100%;
+left: 0;
+z-index: 1000;
+display: none;
+float: left;
+min-width: 60px;
+padding: 5px 0;
+margin: 2px 0 0;
+font-size: 14px;
+text-align: center;
+list-style: none;
+background-color: rgba(255, 255, 255, 0) !Important;
+-webkit-background-clip: padding-box;
+background-clip: padding-box;
+border: none;
+border-radius: 0px;
+-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0) !Important;
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0) !Important;
+}
+#inbox .fa-iox{
+    font-size: 22px;
+}
+#inbox .dropdown-menu > li > a {
+display: block;
+padding: 0;
+padding-top: 4px;
+margin-top: 20px;
+clear: both;
+font-weight: normal;
+line-height: 1.42857143;
+color: #333;
+background: #fff;
+white-space: nowrap;
+width: 40px;
+height: 40px;
+border: solid 1px #ccc;
+border-radius: 50px;
+font-size: 21px;
+box-shadow: 0px 3px 7px 0px rgba(203, 203, 203, 0.72);
+}
+#inbox .dropdown-menu > li:first-child>a {
+    background: #6E4320 !important;
+    color: #fff !important;
+}
+#inbox .dropdown-menu > li:last-child>a {
+    background: #D3A516;
+    color: #fff;
+}
+#inbox .dropdown-menu > li:nth-child(3)>a {
+    background: #3C80F6;
+    color: #fff;
+}
+#inbox .dropdown-menu > li:nth-child(2)>a {
+    background: #2CAC26;
+    color: #fff;
+}
+#inbox .fa-iosm{
+    
+    margin-top: 7px;
+}
+</style>
+
+<div class="bg_load" style="display: none;"></div>
+<div class="wrapper" style="display: none;">
+    <div class="inner">
+        <span>L</span>
+        <span>o</span>
+        <span>a</span>
+        <span>d</span>
+        <span>i</span>
+        <span>n</span>
+        <span>g</span>
+    </div>
+</div>
+
+<style type="text/css">
+    @import url(https://fonts.googleapis.com/css?family=Racing+Sans+One);
+
+
+    
+.bg_load {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: #EEE;
+}
+
+.wrapper {
+    /* Size and position */
+    font-size: 25px; /* 1em */
+    width: 8em;
+    height: 8em;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+
+    /* Styles */
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    border: 1em dashed rgba(138,189,195,0.5);
+    box-shadow: 
+        inset 0 0 2em rgba(255,255,255,0.3),
+        0 0 0 0.7em rgba(255,255,255,0.3);
+    animation: rota 3.5s linear infinite;
+
+    /* Font styles */
+    font-family: 'Racing Sans One', sans-serif;
+    
+    color: #444;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 .04em rgba(255,255,255,0.9);
+    line-height: 6em;
+}
+
+.wrapper:before,
+.wrapper:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border-radius: inherit;
+    box-shadow: inset 0 0 2em rgba(255,255,255,0.3);
+    border: 1em dashed;
+}
+
+.wrapper:before {
+    border-color: rgba(138,189,195,0.2);
+    top: 0; right: 0; bottom: 0; left: 0;
+}
+
+.wrapper:after {
+    border-color: rgba(138,189,195,0.4);
+    top: 1em; right: 1em; bottom: 1em; left: 1em; 
+}
+
+.wrapper .inner {
+    width: 100%;
+    height: 100%;
+    animation: rota 3.5s linear reverse infinite;
+}
+
+.wrapper span {
+    display: inline-block;
+    animation: placeholder 1.5s ease-out infinite;
+}
+
+.wrapper span:nth-child(1)  { animation-name: loading-1;  }
+.wrapper span:nth-child(2)  { animation-name: loading-2;  }
+.wrapper span:nth-child(3)  { animation-name: loading-3;  }
+.wrapper span:nth-child(4)  { animation-name: loading-4;  }
+.wrapper span:nth-child(5)  { animation-name: loading-5;  }
+.wrapper span:nth-child(6)  { animation-name: loading-6;  }
+.wrapper span:nth-child(7)  { animation-name: loading-7;  }
+
+@keyframes rota {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes loading-1 {
+    14.28% { opacity: 0.3; }
+}
+
+@keyframes loading-2 {
+    28.57% { opacity: 0.3; }
+}
+
+@keyframes loading-3 {
+    42.86% { opacity: 0.3; }
+}
+
+@keyframes loading-4 {
+    57.14% { opacity: 0.3; }
+}
+
+@keyframes loading-5 {
+    71.43% { opacity: 0.3; }
+}
+
+@keyframes loading-6 {
+    85.71% { opacity: 0.3; }
+}
+
+@keyframes loading-7 {
+    100% { opacity: 0.3; }
+}
+</style>
+
+<script type="text/javascript">
+    $(window).load(function() {
+    $(".bg_load").fadeOut("slow");
+    $(".wrapper").fadeOut("slow");
+})
+
+</script><!-- Start sm Modal -->
+<div class="modal fade modal_sm" id="modal_sm" tabindex="-1" role="dialog" aria-labelledby="modal_sm_Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal_header" style="">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+
+    <div class="modal-content">
+        <div id="modal_sm_header" class="modal_content_header">Header</div>
+            <div class="modal_sm_body" id="modal_sm_body">
+                          
+            </div>
+
+    </div>
+    </div>
+</div>
+<!-- End sm Modal -->
+
+<!-- Start md Modal -->
+<div class="modal fade modal_md" id="modal_md" tabindex="-1" role="dialog" aria-labelledby="modal_md_Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal_header" style="">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+
+    <div class="modal-content">
+        <div id="modal_md_header" class="modal_content_header">Header</div>
+            <div class="modal_md_body" id="modal_md_body">
+                           
+            </div>
+
+    </div>
+    </div>
+</div>
+<!-- End md Modal -->
+
+<!-- Start lg Modal -->
+<div class="modal fade modal_lg" id="modal_lg" tabindex="-1" role="dialog" aria-labelledby="modal_md_Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal_header" style="">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+
+    <div class="modal-content">
+        <div id="modal_lg_header" class="modal_content_header">Header</div>
+            <div class="modal_lg_body" id="modal_lg_body">
+                           
+            </div>
+
+    </div>
+    </div>
+</div>
+<!-- End lg Modal -->
+
+<style type="text/css">
+    .modal-content{
+        border-radius: 0px;
+    }
+    .modal_sm .modal-dialog{max-width: 350px; width: 100%;}
+    .modal_md .modal-dialog{max-width: 600px; width: 100%;}
+    .modal_lg .modal-dialog{max-width: 950px; width: 100%;}
+    .modal_header{
+       border-radius: 10px 10px 0px 0px;
+    }
+    .modal_sm_body,.modal_md_body,.modal_lg_body{
+        padding: 20px;
+        background-color: #ECF0F1;
+        overflow: scroll;
+        max-height: 500px;
+    }
+    .modal-content  {
+     -webkit-border-radius: 5px !important;
+     -moz-border-radius: 5px !important;
+     border-radius: 0px 0px 5px 5px !important; 
+    }
+    .modal_content_header{
+        background-color: var(--bg-color);
+        color: var(--font-color);
+        padding: 15px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .modal_header .close {
+      margin: 0;
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 23px;
+      background-color: #00aeef;
+      color: #ffe300;
+      font-size: 20px;
+      opacity: 1;
+      z-index: 10;
+    }
+    .modal_header .close:hover {
+      outline: none;
+      font-size: 30px;
+    }
+    
+    .modal_header .close:focus {
+      outline: none;
+      background-color: #049ad1;
+    }
+
+    
+</style>
+
+<script type="text/javascript">
+    function modal_open(type,header="Header",permission="open"){
+        
+        if(type=="sm")modal_sm(permission,header);
+        else if(type=="md")modal_md(permission,header);
+        else if(type=="lg")modal_lg(permission,header);  
+
+    }
+
+
+    function modal_sm(permission,header){
+        modal_ob=$("#modal_sm");
+        set_data("modal_sm_header",header);
+        if(permission=="open")modal_ob.modal("show");
+        else modal_ob.modal("hide");
+    }
+     function modal_md(permission,header){
+        modal_ob=$("#modal_md");
+        set_data("modal_md_header",header);
+        if(permission=="open")modal_ob.modal("show");
+        else modal_ob.modal("hide");
+    }
+    function modal_lg(permission,header){
+        modal_ob=$("#modal_lg");
+        set_data("modal_lg_header",header);
+        if(permission=="open")modal_ob.modal("show");
+        else modal_ob.modal("hide");
+    }
+
+    function set_data(div,data){
+        document.getElementById(div).innerHTML=data;
+    }
+</script>
+
+<script type="text/javascript" src="./index_files/dashboard.js.download"></script>
+<script type="text/javascript" src="./index_files/loader.js.download"></script>
+
+<script type="text/javascript">
+            $(document).ready(function() {
+                 $('table.display').DataTable();
+            } );
+        </script>
+
+
+
+
+
+
+
+
+
+ <div class="row" style="margin-bottom: 10px;">
+    
+   
+     <div class="col-lg-8">
+     	<div class="row">
+     		<div class="col-ms-12 col-sm-12">
+                        <div class="circle-tile">
+                            <a href="http://localhost/Student-Management-System/index.php">
+                                <div class="circle-tile-heading dark-blue">
+                                    <img src="./index_files/logo.jpg" class="logo_img">
+                                </div>
+                            </a>
+                            <div class="circle-tile-content dark-blue">
+                                <center>
+                                <div class="description_area">
+                                  <font class="site_title">SFS Student Management System</font><br>
+                                      <font class="site_description">
+                                        <span class="glyphicon glyphicon-map-marker"></span> Moratuwa , Bambalapitiya , Galle<br>
+                                        <span class="glyphicon glyphicon-phone"></span> Phone: 0701121468 | <span class="glyphicon glyphicon-envelope"></span> Email: dilmanthakumara@gmail.com                                  </font>
+                                </div>
+                              </center>
+                               
+                            </div>
+                        </div>
+        </div>
+     	
+     	</div>
+         
+    </div>
+
+     <div class="col-lg-4">
+        <center><font style="font-weight: bold;text-align: center; font-size: 18px"> 
+        	         	<marquee style="color: var(--bg-color)" behavior="scroll" direction="left">Good Morning, admin</marquee>
+
+         </font></center>
+                <table width="100%">
+                    <tbody><tr>
+                        <td class="td_info1">Today Date: </td>
+                        <td class="td_info2">29 Jul 2024 11:53:AM</td>
+                    </tr>
+                    <tr>
+                        <td class="td_info1">Today Day: </td>
+                        <td class="td_info2">Monday</td>
+                    </tr>
+                    <tr>
+                        <td class="td_info1">Your IP: </td>
+                        <td class="td_info2">::1</td>
+                    </tr>
+                    <tr>
+                        <td class="td_info1">Your Browser: </td>
+                        <td class="td_info2">Google Chrome</td>
+                    </tr>
+                    <tr>
+                        <td class="td_info1">Your Permission: </td>
+                        <td class="td_info2">TechSerm Super Admin</td>
+                    </tr>
+                    
+                </tbody></table>
+                           
+    </div>
+
+    <style type="text/css">
+
+    .site_title{
+          font-weight: bold;
+          font-size: 33px;
+          color: var(--font-color);
+          font-family: "Times New Roman", Times, serif;
+    }
+    .site_description{
+          font-weight: bold;
+          font-size: 18px;
+          color: var(--font-color);
+    }
+
+    	.td_info1,.td_info2{
+  border-width: 1px;
+  border-color: #DDDDDD;
+  border-style: solid;
+  padding: 10px;
+}
+.td_info1{
+  width: 150px; 
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+.logo_img{
+
+height: 75px;
+width: 75px;
+padding: 5px;
+
+}
+.description_area{
+	background-color: var(--bg-color); 
+	color: var(--font-color);
+
+	padding: 5px 10px 30px 10px;
+
+}
+
+    </style>
+
+</div>
+ <div class="row">
+
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="circle-tile">
+                            <a href="http://localhost/Student-Management-System/index.php">
+                                <div class="circle-tile-heading dark-blue">
+                                    <i class="fa fa-users fa-fw fa-3x"></i>
+                                </div>
+                            </a>
+                            <div class="circle-tile-content dark-blue">
+                                <div class="circle-tile-description text-faded">
+                                    Total Students
+                                </div>
+                                <div class="circle-tile-number text-faded">
+                                    2                                    <span id="sparklineA"></span>
+                                </div>
+                                <a href="http://localhost/Student-Management-System/index.php" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="circle-tile">
+                            <a href="http://localhost/Student-Management-System/index.php">
+                                <div class="circle-tile-heading dark-blue">
+                                    <i class="fa fa-money fa-fw fa-3x"></i>
+                                </div>
+                            </a>
+                            <div class="circle-tile-content dark-blue">
+                                <div class="circle-tile-description text-faded">
+                                    Total Teacher
+                                </div>
+                                <div class="circle-tile-number text-faded">
+                                    -
+                                </div>
+                                <a href="http://localhost/Student-Management-System/index.php" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="circle-tile">
+                            <a href="http://localhost/Student-Management-System/index.php">
+                                <div class="circle-tile-heading dark-blue">
+                                    <i class="fa fa-bell fa-fw fa-3x"></i>
+                                </div>
+                            </a>
+                            <div class="circle-tile-content dark-blue">
+                                <div class="circle-tile-description text-faded">
+                                    SMS Balance
+                                </div>
+                                <div class="circle-tile-number text-faded">
+                                   0                                </div>
+                                <a href="http://localhost/Student-Management-System/index.php" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="circle-tile">
+                            <a href="http://localhost/Student-Management-System/index.php#">
+                                <div class="circle-tile-heading dark-blue">
+                                    <i class="fa fa-tasks fa-fw fa-3x"></i>
+                                </div>
+                            </a>
+                            <div class="circle-tile-content dark-blue">
+                                <div class="circle-tile-description text-faded">
+                                    Total Notice
+                                </div>
+                                <div class="circle-tile-number text-faded">
+                                    1                                    <span id="sparklineB"></span>
+                                </div>
+                                <a href="http://localhost/Student-Management-System/index.php#" class="circle-tile-footer">More Info <i class="fa fa-chevron-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+
+
+
+    <div class="row">
+    
+    <script src="./index_files/canvas_api.js.download"></script>
+
+
+        
+<script type="text/javascript" src="./index_files/graph.js.download"></script>
+
+<div class="col-md-6">
+            <div class="dashboard_box" style="overflow: hidden;">
+                <div class="box_header">Last 7 Days Site Activity Graph</div>
+                <div class="box_body">
+                     <div id="site_activity_graph" style="height: 300px; width: 100%;"><div class="canvasjs-chart-container" style="position: relative; text-align: left; cursor: auto;"><canvas class="canvasjs-chart-canvas" width="822" height="375" style="width: 658px; height: 300px; position: absolute;"></canvas><canvas class="canvasjs-chart-canvas" width="822" height="375" style="width: 658px; height: 300px; position: absolute; -webkit-tap-highlight-color: transparent;"></canvas><div class="canvasjs-chart-toolbar" style="position: absolute; right: 1px; top: 1px; border: 1px solid transparent;"></div><div class="canvasjs-chart-tooltip" style="position: absolute; height: auto; box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px 2px; z-index: 1000; pointer-events: none; display: none; border-radius: 5px;"><div style=" width: auto;height: auto;min-width: 50px;line-height: auto;margin: 0px 0px 0px 0px;padding: 5px;font-family: Calibri, Arial, Georgia, serif;font-weight: normal;font-style: italic;font-size: 14px;color: #000000;text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);text-align: left;border: 2px solid gray;background: rgba(255,255,255,.9);text-indent: 0px;white-space: nowrap;border-radius: 5px;-moz-user-select:none;-khtml-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;} "> Sample Tooltip</div></div><a class="canvasjs-chart-credit" title="JavaScript Charts" style="outline:none;margin:0px;position:absolute;right:2px;top:286px;color:dimgrey;text-decoration:none;font-size:11px;font-family: Calibri, Lucida Grande, Lucida Sans Unicode, Arial, sans-serif" tabindex="-1" target="_blank" href="https://canvasjs.com/">CanvasJS.com</a></div></div>
+                    
+                </div>
+            </div>
+</div>
+<div class="col-md-6">
+            <div class="dashboard_box" style="overflow: hidden;">
+                <div class="box_header">Last 7 Days SMS Send Performance Graph</div>
+                <div class="box_body">
+                     
+                    <div id="message_send_graph" style="height: 300px; width: 100%;"><div class="canvasjs-chart-container" style="position: relative; text-align: left; cursor: auto;"><canvas class="canvasjs-chart-canvas" width="822" height="375" style="width: 658px; height: 300px; position: absolute;"></canvas><canvas class="canvasjs-chart-canvas" width="822" height="375" style="width: 658px; height: 300px; position: absolute; -webkit-tap-highlight-color: transparent;"></canvas><div class="canvasjs-chart-toolbar" style="position: absolute; right: 1px; top: 1px; border: 1px solid transparent;"></div><div class="canvasjs-chart-tooltip" style="position: absolute; height: auto; box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px 2px; z-index: 1000; pointer-events: none; display: none; border-radius: 5px;"><div style=" width: auto;height: auto;min-width: 50px;line-height: auto;margin: 0px 0px 0px 0px;padding: 5px;font-family: Calibri, Arial, Georgia, serif;font-weight: normal;font-style: italic;font-size: 14px;color: #000000;text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);text-align: left;border: 2px solid gray;background: rgba(255,255,255,.9);text-indent: 0px;white-space: nowrap;border-radius: 5px;-moz-user-select:none;-khtml-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;} "> Sample Tooltip</div></div><a class="canvasjs-chart-credit" title="JavaScript Charts" style="outline:none;margin:0px;position:absolute;right:2px;top:286px;color:dimgrey;text-decoration:none;font-size:11px;font-family: Calibri, Lucida Grande, Lucida Sans Unicode, Arial, sans-serif" tabindex="-1" target="_blank" href="https://canvasjs.com/">CanvasJS.com</a></div></div>       
+                   
+                </div>
+            </div>
+</div>
+  
+
+<script>
+
+sms_send_data=[{"y":0,"label":"23 Jul 2024"},{"y":0,"label":"24 Jul 2024"},{"y":0,"label":"25 Jul 2024"},{"y":0,"label":"26 Jul 2024"},{"y":0,"label":"27 Jul 2024"},{"y":0,"label":"28 Jul 2024"},{"y":0,"label":"29 Jul 2024"}];
+site_activity_data=[{"y":0,"label":"23 Jul 2024 (Tuesday)"},{"y":0,"label":"24 Jul 2024 (Wednesday)"},{"y":0,"label":"25 Jul 2024 (Thursday)"},{"y":0,"label":"26 Jul 2024 (Friday)"},{"y":0,"label":"27 Jul 2024 (Saturday)"},{"y":31,"label":"28 Jul 2024 (Sunday)"},{"y":11,"label":"29 Jul 2024 (Monday)"}];
+
+window.onload = function () {
+  graph(sms_send_data,site_activity_data);
+
+}
+
+</script>
+
+
+
+
+<div class="col-md-12">
+            <div class="dashboard_box">
+                <div class="box_header">Live Site Activity</div>
+                <div class="box_body" id="site_activity">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table id="" class="display" width="100%">
+                        <thead style="width: 100%;">
+                        <tr>
+                            <td class="td_list1">#</td>
+                            <td class="td_list1">User Name</td>
+                            <td class="td_list1">Table Name</td>
+                            <td class="td_list1">Action</td>
+                            <td class="td_list1">IP</td>
+                            <td class="td_list1">Browser</td>
+                            <td class="td_list1">Date</td>
+                            <td class="td_list1">View Activity</td>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                         
+                        <tr>
+                            <td class="td_list2">
+                  				42 
+                            </td>
+                            <td class="td_list2">admin</td>
+                            <td class="td_list2">
+                                user    
+                            </td>
+                            <td class="td_list2">
+                                update    
+                            </td>
+                            
+                            <td class="td_list2">
+                                ::1    
+                            </td>
+                            <td class="td_list2">
+                                Google Chrome    
+                            </td>
+                            <td class="td_list2">
+                                1 hour ago   
+                            </td>
+                            <td class="td_list2">
+                                <button onclick="get_activity_info(42)" class="btn btn-danger btn-xs">View Activity</button>   
+                            </td>
+
+                        </tr>
+                         
+                        <tr>
+                            <td class="td_list2">
+                  				41 
+                            </td>
+                            <td class="td_list2">admin</td>
+                            <td class="td_list2">
+                                user    
+                            </td>
+                            <td class="td_list2">
+                                update    
+                            </td>
+                            
+                            <td class="td_list2">
+                                ::1    
+                            </td>
+                            <td class="td_list2">
+                                Google Chrome    
+                            </td>
+                            <td class="td_list2">
+                                1 hour ago   
+                            </td>
+                            <td class="td_list2">
+                                <button onclick="get_activity_info(41)" class="btn btn-danger btn-xs">View Activity</button>   
+                            </td>
+
+                        </tr>
+                         
+                        <tr>
+                            <td class="td_list2">
+                  				40 
+                            </td>
+                            <td class="td_list2">admin</td>
+                            <td class="td_list2">
+                                setting    
+                            </td>
+                            <td class="td_list2">
+                                update    
+                            </td>
+                            
+                            <td class="td_list2">
+                                ::1    
+                            </td>
+                            <td class="td_list2">
+                                Google Chrome    
+                            </td>
+                            <td class="td_list2">
+                                1 hour ago   
+                            </td>
+                            <td class="td_list2">
+                                <button onclick="get_activity_info(40)" class="btn btn-danger btn-xs">View Activity</button>   
+                            </td>
+
+                        </tr>
+                         
+                        <tr>
+                            <td class="td_list2">
+                  				39 
+                            </td>
+                            <td class="td_list2">admin</td>
+                            <td class="td_list2">
+                                student_payment    
+                            </td>
+                            <td class="td_list2">
+                                update    
+                            </td>
+                            
+                            <td class="td_list2">
+                                ::1    
+                            </td>
+                            <td class="td_list2">
+                                Google Chrome    
+                            </td>
+                            <td class="td_list2">
+                                2 hour's ago   
+                            </td>
+                            <td class="td_list2">
+                                <button onclick="get_activity_info(39)" class="btn btn-danger btn-xs">View Activity</button>   
+                            </td>
+
+                        </tr>
+                         
+                        <tr>
+                            <td class="td_list2">
+                  				38 
+                            </td>
+                            <td class="td_list2">admin</td>
+                            <td class="td_list2">
+                                student_payment    
+                            </td>
+                            <td class="td_list2">
+                                update    
+                            </td>
+                            
+                            <td class="td_list2">
+                                ::1    
+                            </td>
+                            <td class="td_list2">
+                                Google Chrome    
+                            </td>
+                            <td class="td_list2">
+                                2 hour's ago   
+                            </td>
+                            <td class="td_list2">
+                                <button onclick="get_activity_info(38)" class="btn btn-danger btn-xs">View Activity</button>   
+                            </td>
+
+                        </tr>
+                         
+                        <tr>
+                            <td class="td_list2">
+                  				37 
+                            </td>
+                            <td class="td_list2">admin</td>
+                            <td class="td_list2">
+                                student_payment    
+                            </td>
+                            <td class="td_list2">
+                                insert    
+                            </td>
+                            
+                            <td class="td_list2">
+                                ::1    
+                            </td>
+                            <td class="td_list2">
+                                Google Chrome    
+                            </td>
+                            <td class="td_list2">
+                                2 hour's ago   
+                            </td>
+                            <td class="td_list2">
+                                <button onclick="get_activity_info(37)" class="btn btn-danger btn-xs">View Activity</button>   
+                            </td>
+
+                        </tr>
+                         
+                        <tr>
+                            <td class="td_list2">
+                  				36 
+                            </td>
+                            <td class="td_list2">admin</td>
+                            <td class="td_list2">
+                                receive_payment    
+                            </td>
+                            <td class="td_list2">
+                                insert    
+                            </td>
+                            
+                            <td class="td_list2">
+                                ::1    
+                            </td>
+                            <td class="td_list2">
+                                Google Chrome    
+                            </td>
+                            <td class="td_list2">
+                                2 hour's ago   
+                            </td>
+                            <td class="td_list2">
+                                <button onclick="get_activity_info(36)" class="btn btn-danger btn-xs">View Activity</button>   
+                            </td>
+
+                        </tr>
+                         
+                        <tr>
+                            <td class="td_list2">
+                  				35 
+                            </td>
+                            <td class="td_list2">admin</td>
+                            <td class="td_list2">
+                                student_payment    
+                            </td>
+                            <td class="td_list2">
+                                insert    
+                            </td>
+                            
+                            <td class="td_list2">
+                                ::1    
+                            </td>
+                            <td class="td_list2">
+                                Google Chrome    
+                            </td>
+                            <td class="td_list2">
+                                2 hour's ago   
+                            </td>
+                            <td class="td_list2">
+                                <button onclick="get_activity_info(35)" class="btn btn-danger btn-xs">View Activity</button>   
+                            </td>
+
+                        </tr>
+                         
+                        <tr>
+                            <td class="td_list2">
+                  				34 
+                            </td>
+                            <td class="td_list2">admin</td>
+                            <td class="td_list2">
+                                admit_program    
+                            </td>
+                            <td class="td_list2">
+                                insert    
+                            </td>
+                            
+                            <td class="td_list2">
+                                ::1    
+                            </td>
+                            <td class="td_list2">
+                                Google Chrome    
+                            </td>
+                            <td class="td_list2">
+                                2 hour's ago   
+                            </td>
+                            <td class="td_list2">
+                                <button onclick="get_activity_info(34)" class="btn btn-danger btn-xs">View Activity</button>   
+                            </td>
+
+                        </tr>
+                         
+                        <tr>
+                            <td class="td_list2">
+                  				33 
+                            </td>
+                            <td class="td_list2">admin</td>
+                            <td class="td_list2">
+                                student    
+                            </td>
+                            <td class="td_list2">
+                                insert    
+                            </td>
+                            
+                            <td class="td_list2">
+                                ::1    
+                            </td>
+                            <td class="td_list2">
+                                Google Chrome    
+                            </td>
+                            <td class="td_list2">
+                                2 hour's ago   
+                            </td>
+                            <td class="td_list2">
+                                <button onclick="get_activity_info(33)" class="btn btn-danger btn-xs">View Activity</button>   
+                            </td>
+
+                        </tr>
+                                                </tbody>
+                    </table>
+
+	</div>
+            </div>
+        </div>
+    </div>    
+
+<link rel="stylesheet" type="text/css" href="./index_files/style.css">
+<style type="text/css">
+    thead{
+        background-color: #EFF0F2;
+        border-width: 0px;
+    }
+    .td_list1{
+        background-color: #EFF0F2;
+        color: #000000;
+        padding: 10px;
+        font-weight: bold;
+        border: 1px solid #C6C9D1;
+        text-align: center;
+    }
+    .td_list2{
+        background-color: #ffffff;
+        color: #000000;
+        padding: 8px;
+        border: 1px solid #C6C9D1;
+        text-align: center;
+    }
+</style>
+
+<script type="text/javascript">
+    live_site_action();
+</script></div>
+</div>
+
+
+    <script src="./index_files/bootstrap.js.download"></script>
+    <script type="text/javascript">
+        $("[rel=tooltip]").tooltip();
+        $(function() {
+            $('.demo-cancel-click').click(function(){return false;});
+        });
+    </script>
+
+  <!-- <footer style="background-color: #414959; padding: 20px;"> -->
+               
+<div class="footer-style custom_footer">
+                <!-- Purchase a site license to remove this link from the footer: http://www.portnine.com/bootstrap-themes -->
+                <center>Design &amp; Developed By: <a class="a_footer" href="http://localhost/Student-Management-System/index.php#">Piyuman</a></center>
+           
+</div>
+            <!-- </footer> -->
+
+
+<style type="text/css">
+ 
+    .custom_footer{
+        padding: 10px!important;
+       font-weight: bold;
+       font-size: 18px;
+       font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    }
+    .a_footer{
+       font-size: 20px;
+       color: var(--font-color);
+    }
+</style><span style="position: absolute; left: 0px; top: -20000px; padding: 0px; margin: 0px; border: none; white-space: pre; line-height: normal; font-family: &quot;Trebuchet MS&quot;, Helvetica, sans-serif; font-size: 15px; font-weight: normal; display: none;">Mpgyi</span></body></html>
